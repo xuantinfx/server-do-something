@@ -7,16 +7,16 @@ router.post('/', function (req, res, next) {
 
     // Xử lí data và gửi mail
     let data = req.body.data;
-    if(data.macdiff < -1.15) {
+    //if(data.macdiff < -1.15) {
 
-        mailler.sendMail('index', {data: JSON.stringify(req.body.data)}, 'xuantinfx@gmail.com', "Hello From Gekko")
+        mailler.sendMail('index', {data: JSON.stringify(data)}, 'xuantinfx@gmail.com', "Hello From Gekko")
             .then(info => {
                 console.log('send mail success', info)
             })
             .catch(err => {
                 console.log('send mail error', info)
             })
-    }
+    //}
     res.end(JSON.stringify({
         status: 'success'
     }))
