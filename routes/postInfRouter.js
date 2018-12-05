@@ -14,7 +14,7 @@ router.post('/', function (req, res, next) {
                 console.log('send mail success', info)
             })
             .catch(err => {
-                console.log('send mail error', info)
+                console.log('send mail error', err)
             })
     //}
     res.end(JSON.stringify({
